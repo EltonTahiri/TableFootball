@@ -13,13 +13,20 @@ namespace TableFootball
 
         public static string E2Sulm;
         public static string E2Port;
+
+        public static string Team1;
+        public static string Team2;
         public RegisterTeams()
         {
             InitializeComponent();
+            FillDGA();
+
         }
 
-        public void FillTextFields()
+        public void Fill()
         {
+            Team1 = txtTeam1.Text;
+            Team2 = txtTeam2.Text;
             E1Sulm = txtE1Sulm.Text;
             E1Port = txtE1Port.Text;
 
@@ -27,83 +34,105 @@ namespace TableFootball
             E2Port = txtE2Port.Text;
         }
 
+
+
+
+
         public void btnContinue_Click(object sender, EventArgs e)
         {
-            if (txtE1Port.Text == "" || txtE1Sulm.Text == "" || txtE2Port.Text == "" || txtE2Port.Text == "")
+            if (txtE1Port.Text == "" || txtE1Sulm.Text == "" || txtE2Sulm.Text == "" || txtE2Port.Text == "" || txtTeam1.Text == "" || txtTeam2.Text == "")
             {
                 MessageBox.Show("Ju lutem mbushini te gjitha te dhenat");
             }
 
             else
             {
-                FillTextFields();
+                Fill();
                 AddPlayerDb();
+                AddTeamsDb();
+                
             }
+
+            ResultFrom resultFrom = new ResultFrom(Team1, Team2, E1Sulm, E1Port, E2Sulm, E2Port);
+            this.Hide();
+            resultFrom.ShowDialog();
+            
+
 
         }
 
 
         public void AddPlayerDb()
         {
-            string connectionString = @"Server=DESKTOP-S0U0CDO\SQLEXPRESS;Database=TableFootball;Trusted_Connection=True;";
+            string connectionString = @"Server=OLTI-PC;Database=TableFootball;Trusted_Connection=True;";
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "INSERT INTO [dbo].[Players] ([name]) VALUES (@name)";
+                    string query = "INSERT INTO [dbo].[player] (name) VALUES (@name)";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                       
-                        if (!CheckPlayerExists(E1Port))
+                        if (!CheckPlayerExists(E1Port) && !CheckPlayerExists(E1Sulm) && !CheckPlayerExists(E2Port) && !CheckPlayerExists(E2Sulm))
                         {
                             cmd.Parameters.AddWithValue("@name", E1Port);
                             cmd.ExecuteNonQuery();
                             cmd.Parameters.Clear();
-                            MessageBox.Show("Lojtari u regjistrua!");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Lojtari me emrin:" + E1Port+" ekziston");
-                        }
-                        
-                        if (!CheckPlayerExists(E1Sulm))
-                        {
+
                             cmd.Parameters.AddWithValue("@name", E1Sulm);
                             cmd.ExecuteNonQuery();
                             cmd.Parameters.Clear();
-                            MessageBox.Show("Lojtari u regjistrua!");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Lojtari me emrin:" + E1Sulm + " ekziston");
-                        }
 
-
-                        if (!CheckPlayerExists(E2Port))
-                        {
                             cmd.Parameters.AddWithValue("@name", E2Port);
                             cmd.ExecuteNonQuery();
                             cmd.Parameters.Clear();
-                            MessageBox.Show("Lojtari u regjistrua!");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Lojtari me emrin:" + E2Port + " ekziston");
-                        }
 
-
-                        if (!CheckPlayerExists(E2Sulm))
-                        {
                             cmd.Parameters.AddWithValue("@name", E2Sulm);
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Lojtari u regjistrua!");
+                            MessageBox.Show("Lojtaret u regjistruan!");
                         }
-                        else
+                       
+
+                    }
+
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void AddTeamsDb()
+        {
+            string connectionString = @"Server=OLTI-PC;Database=TableFootball;Trusted_Connection=True;";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "INSERT INTO [dbo].[Teams] (teamName, attacker, defender) VALUES (@teamName ,@attacker , @defender )";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        if (!CheckTeamExists(Team1) && !CheckTeamExists(Team2))
                         {
-                            MessageBox.Show("Lojtari me emrin:" + E2Sulm + " ekziston");
+                            cmd.Parameters.AddWithValue("@teamName", Team1);
+                            cmd.Parameters.AddWithValue("@attacker", E1Sulm);
+                            cmd.Parameters.AddWithValue("@defender", E1Port);
+                            cmd.ExecuteNonQuery();
+                            cmd.Parameters.Clear();
+
+                            cmd.Parameters.AddWithValue("@teamName", Team2);
+                            cmd.Parameters.AddWithValue("@attacker", E2Sulm);
+                            cmd.Parameters.AddWithValue("@defender", E2Port);
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Teams Registered!");
                         }
+
+
                     }
 
                     conn.Close();
@@ -117,8 +146,8 @@ namespace TableFootball
 
         public bool CheckPlayerExists(string playerName)
         {
-            string connectionString = @"Server=DESKTOP-S0U0CDO\SQLEXPRESS;Database=TableFootball;Trusted_Connection=True;";
-            string query = "SELECT COUNT(*) FROM Players WHERE name = @name";
+            string connectionString = @"Server=OLTI-PC;Database=TableFootball;Trusted_Connection=True;";
+            string query = "SELECT COUNT(*) FROM player WHERE name = @name";
 
             try
             {
@@ -140,6 +169,33 @@ namespace TableFootball
                 return false;
             }
         }
+        public bool CheckTeamExists(string playerName)
+        {
+            string connectionString = @"Server=OLTI-PC;Database=TableFootball;Trusted_Connection=True;";
+            string query = "SELECT COUNT(*) FROM Teams WHERE teamName = @teamName";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@teamName", playerName);
+                        int count = (int)cmd.ExecuteScalar();
+                        return count > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+
 
         public void btnClear_Click(object sender, EventArgs e)
         {
@@ -148,5 +204,23 @@ namespace TableFootball
             txtE2Port.Text = "";
             txtE2Sulm.Text = "";
         }
+        public void FillDGA()
+        {
+            string connectionString = @"Server=OLTI-PC;Database=TableFootball;Trusted_Connection=True;";
+           
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT * FROM PlayedGames";
+                SqlDataAdapter da = new SqlDataAdapter(query , conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView.DataSource = dt;
+
+                conn.Close();
+            }
+        }
+
     }
 }
