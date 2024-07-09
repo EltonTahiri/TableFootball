@@ -212,7 +212,7 @@ namespace TableFootball
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT * FROM PlayedGames";
+                string query = "SELECT winner as Team, COUNT(*) AS wins\r\n   FROM playedGames\r\n   WHERE DatePlayed >= DATEADD(DAY, -7, GETDATE())\r\n   GROUP BY winner\r\n   ORDER BY wins DESC";
                 SqlDataAdapter da = new SqlDataAdapter(query , conn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);

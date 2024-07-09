@@ -25,6 +25,8 @@ namespace TableFootball
         public string team2Score;
         private int _ticks;
         public string winner;
+        private int _minutes;
+        private int _ticksDisplay;
         DateTime dt = DateTime.Now;
 
 
@@ -128,10 +130,17 @@ namespace TableFootball
         private void MyTimer_Tick(object sender, EventArgs e)
         {
             _ticks++;
+            _ticksDisplay++;
 
-            TimerCounter.Text = _ticks.ToString();
+            TimerCounter.Text = _ticksDisplay.ToString();
+            if (_ticksDisplay % 60 == 0)
+            {
+                label1.Text = ":";
+                _ticksDisplay = 0;
+                _minutes++;
+                minutes.Text = _minutes.ToString();
 
-          
+            }
         }
     }
 }

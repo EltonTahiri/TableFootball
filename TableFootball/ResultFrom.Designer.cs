@@ -40,6 +40,8 @@
             btnFinish = new Button();
             TimerCounter = new Label();
             MyTimer = new System.Windows.Forms.Timer(components);
+            minutes = new Label();
+            label1 = new Label();
             SuspendLayout();
             // 
             // Team1
@@ -153,11 +155,10 @@
             // TimerCounter
             // 
             TimerCounter.AutoSize = true;
-            TimerCounter.BorderStyle = BorderStyle.Fixed3D;
-            TimerCounter.Font = new Font("Segoe UI", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
-            TimerCounter.Location = new Point(740, 59);
+            TimerCounter.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point);
+            TimerCounter.Location = new Point(753, 62);
             TimerCounter.Name = "TimerCounter";
-            TimerCounter.Size = new Size(2, 64);
+            TimerCounter.Size = new Size(0, 60);
             TimerCounter.TabIndex = 14;
             // 
             // MyTimer
@@ -165,12 +166,32 @@
             MyTimer.Interval = 1000;
             MyTimer.Tick += MyTimer_Tick;
             // 
+            // minutes
+            // 
+            minutes.AutoSize = true;
+            minutes.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point);
+            minutes.Location = new Point(683, 62);
+            minutes.Name = "minutes";
+            minutes.Size = new Size(0, 60);
+            minutes.TabIndex = 15;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(721, 61);
+            label1.Name = "label1";
+            label1.Size = new Size(0, 60);
+            label1.TabIndex = 16;
+            // 
             // ResultFrom
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(10, 20, 30);
             ClientSize = new Size(1440, 993);
+            Controls.Add(label1);
+            Controls.Add(minutes);
             Controls.Add(TimerCounter);
             Controls.Add(btnFinish);
             Controls.Add(txtTeam2Score);
@@ -202,5 +223,7 @@
         private Button btnFinish;
         private Label TimerCounter;
         private System.Windows.Forms.Timer MyTimer;
+        private Label minutes;
+        private Label label1;
     }
 }
