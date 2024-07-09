@@ -30,11 +30,11 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterTeams));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             txtE1Port = new TextBox();
@@ -53,6 +53,11 @@
             txtTeam2 = new TextBox();
             dataGridView = new DataGridView();
             timer2 = new System.Windows.Forms.Timer(components);
+            checkBox1 = new CheckBox();
+            checkBox2 = new CheckBox();
+            checkBox3 = new CheckBox();
+            checkBox4 = new CheckBox();
+            checkBox5 = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
@@ -248,51 +253,51 @@
             dataGridView.AllowUserToDeleteRows = false;
             dataGridView.AllowUserToResizeColumns = false;
             dataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(10, 20, 30);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(10, 20, 30);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             dataGridView.BackgroundColor = Color.FromArgb(10, 20, 30);
             dataGridView.BorderStyle = BorderStyle.None;
             dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(10, 20, 30);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(10, 20, 30);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(10, 20, 30);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(10, 20, 30);
+            dataGridViewCellStyle7.SelectionForeColor = Color.White;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(10, 20, 30);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(215, 106, 15);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(10, 20, 30);
-            dataGridViewCellStyle3.SelectionForeColor = Color.White;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(10, 20, 30);
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = Color.FromArgb(215, 106, 15);
+            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(10, 20, 30);
+            dataGridViewCellStyle8.SelectionForeColor = Color.White;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dataGridView.DefaultCellStyle = dataGridViewCellStyle8;
             dataGridView.Enabled = false;
             dataGridView.EnableHeadersVisualStyles = false;
             dataGridView.GridColor = Color.BlanchedAlmond;
             dataGridView.Location = new Point(140, 80);
             dataGridView.Name = "dataGridView";
             dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(10, 20, 30);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(10, 20, 30);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.FromArgb(10, 20, 30);
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(10, 20, 30);
+            dataGridViewCellStyle9.SelectionForeColor = Color.White;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             dataGridView.RowHeadersVisible = false;
             dataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(10, 20, 30);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(10, 20, 30);
-            dataGridViewCellStyle5.SelectionForeColor = Color.White;
-            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.BackColor = Color.FromArgb(10, 20, 30);
+            dataGridViewCellStyle10.ForeColor = Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(10, 20, 30);
+            dataGridViewCellStyle10.SelectionForeColor = Color.White;
+            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
             dataGridView.RowTemplate.Height = 29;
             dataGridView.Size = new Size(424, 420);
             dataGridView.TabIndex = 16;
@@ -301,6 +306,61 @@
             // 
             timer2.Tick += timer2_Tick;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.ForeColor = Color.White;
+            checkBox1.Location = new Point(140, 509);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(69, 24);
+            checkBox1.TabIndex = 17;
+            checkBox1.Text = "1 Day";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.ForeColor = Color.White;
+            checkBox2.Location = new Point(140, 539);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(79, 24);
+            checkBox2.TabIndex = 18;
+            checkBox2.Text = "1 Week";
+            checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            checkBox3.AutoSize = true;
+            checkBox3.ForeColor = Color.White;
+            checkBox3.Location = new Point(140, 569);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new Size(86, 24);
+            checkBox3.TabIndex = 19;
+            checkBox3.Text = "1 Month";
+            checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            checkBox4.AutoSize = true;
+            checkBox4.ForeColor = Color.White;
+            checkBox4.Location = new Point(140, 597);
+            checkBox4.Name = "checkBox4";
+            checkBox4.Size = new Size(92, 24);
+            checkBox4.TabIndex = 20;
+            checkBox4.Text = "6 Months";
+            checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox5
+            // 
+            checkBox5.AutoSize = true;
+            checkBox5.ForeColor = Color.White;
+            checkBox5.Location = new Point(140, 626);
+            checkBox5.Name = "checkBox5";
+            checkBox5.Size = new Size(71, 24);
+            checkBox5.TabIndex = 21;
+            checkBox5.Text = "1 Year";
+            checkBox5.UseVisualStyleBackColor = true;
+            // 
             // RegisterTeams
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -308,6 +368,11 @@
             BackColor = Color.FromArgb(10, 20, 30);
             ClientSize = new Size(1789, 996);
             ControlBox = false;
+            Controls.Add(checkBox5);
+            Controls.Add(checkBox4);
+            Controls.Add(checkBox3);
+            Controls.Add(checkBox2);
+            Controls.Add(checkBox1);
             Controls.Add(dataGridView);
             Controls.Add(txtTeam2);
             Controls.Add(txtTeam1);
@@ -361,5 +426,10 @@
         private DataGridView dataGridView;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
+        private CheckBox checkBox1;
+        private CheckBox checkBox2;
+        private CheckBox checkBox3;
+        private CheckBox checkBox4;
+        private CheckBox checkBox5;
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 using Timer = System.Threading.Timer;
 
 
@@ -17,12 +18,15 @@ namespace TableFootball
 
         public static string Team1;
         public static string Team2;
+        string valueDaysToCheck;
         private System.Windows.Forms.Timer timer3;
 
         public RegisterTeams()
         {
             InitializeComponent();
-            FillDGA();
+            getCheckedValue();
+            FillDGA(valueDaysToCheck);
+
             timer2.Start();
 
         }
@@ -208,28 +212,37 @@ namespace TableFootball
             txtE2Port.Text = "";
             txtE2Sulm.Text = "";
         }
-        public void FillDGA()
+        public void FillDGA(string daysToCheck)
         {
             string connectionString = @"Server=OLTI-PC;Database=TableFootball;Trusted_Connection=True;";
-            string query = "SELECT winner as Team, COUNT(*) AS wins\r\n   FROM playedGames\r\n   WHERE DatePlayed >= DATEADD(DAY, -7, GETDATE())\r\n   GROUP BY winner\r\n   ORDER BY wins DESC";
+            string query = @"
+        SELECT winner AS Team, COUNT(*) AS wins
+        FROM playedGames
+        WHERE DatePlayed >= DATEADD(DAY, -@daysToCheck, GETDATE())
+        GROUP BY winner
+        ORDER BY wins DESC";
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@daysToCheck", int.Parse(daysToCheck));
 
-                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    dataGridView.DataSource = dt;
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        dataGridView.DataSource = dt;
+                    }
                     conn.Close();
                 }
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-           
+
         }
 
 
@@ -241,12 +254,46 @@ namespace TableFootball
 
         private void Timer3_Tick(object sender, EventArgs e)
         {
-            FillDGA();
+            FillDGA(valueDaysToCheck);
         }
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            FillDGA();
+            getCheckedValue();
+            FillDGA(valueDaysToCheck);
+      
+        }
+
+        public void getCheckedValue()
+        {
+
+            if (checkBox1.Checked)
+            {
+                valueDaysToCheck = "1";
+            }
+            else if (checkBox2.Checked)
+            {
+                valueDaysToCheck =  "7";
+            }
+            else if (checkBox3.Checked)
+            {
+                valueDaysToCheck = "30";
+            }
+            else if (checkBox4.Checked)
+            {
+                valueDaysToCheck = "182";
+            }
+            else if (checkBox5.Checked)
+            {
+                valueDaysToCheck = "365";
+            }
+            else
+            {
+                valueDaysToCheck = "365";
+            }
+
+              
+
         }
     }
 }
