@@ -72,7 +72,7 @@ namespace TableFootball
             else
             {
                 Score();
-                
+
                 int score1 = Int32.Parse(team1Score);
                 int score2 = Int32.Parse(team2Score);
                 if (score1 > score2)
@@ -142,5 +142,7 @@ namespace TableFootball
 
             }
         }
+
+
     }
 }

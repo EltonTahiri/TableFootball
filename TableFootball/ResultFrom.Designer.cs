@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResultFrom));
             Team1 = new Label();
             Team2 = new Label();
             E1sulm = new Label();
@@ -49,7 +50,7 @@
             Team1.AutoSize = true;
             Team1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             Team1.ForeColor = Color.White;
-            Team1.Location = new Point(311, 71);
+            Team1.Location = new Point(479, 121);
             Team1.Name = "Team1";
             Team1.Size = new Size(46, 54);
             Team1.TabIndex = 0;
@@ -60,7 +61,7 @@
             Team2.AutoSize = true;
             Team2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             Team2.ForeColor = Color.White;
-            Team2.Location = new Point(1129, 71);
+            Team2.Location = new Point(1297, 121);
             Team2.Name = "Team2";
             Team2.Size = new Size(46, 54);
             Team2.TabIndex = 1;
@@ -71,7 +72,7 @@
             E1sulm.AutoSize = true;
             E1sulm.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             E1sulm.ForeColor = Color.FromArgb(215, 106, 15);
-            E1sulm.Location = new Point(311, 149);
+            E1sulm.Location = new Point(479, 199);
             E1sulm.Name = "E1sulm";
             E1sulm.Size = new Size(32, 38);
             E1sulm.TabIndex = 2;
@@ -82,7 +83,7 @@
             E2sulm.AutoSize = true;
             E2sulm.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             E2sulm.ForeColor = Color.FromArgb(215, 106, 15);
-            E2sulm.Location = new Point(1129, 149);
+            E2sulm.Location = new Point(1297, 199);
             E2sulm.Name = "E2sulm";
             E2sulm.Size = new Size(32, 38);
             E2sulm.TabIndex = 3;
@@ -93,7 +94,7 @@
             E2Port.AutoSize = true;
             E2Port.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             E2Port.ForeColor = Color.FromArgb(215, 106, 15);
-            E2Port.Location = new Point(1129, 225);
+            E2Port.Location = new Point(1297, 275);
             E2Port.Name = "E2Port";
             E2Port.Size = new Size(32, 38);
             E2Port.TabIndex = 4;
@@ -104,7 +105,7 @@
             E1port.AutoSize = true;
             E1port.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             E1port.ForeColor = Color.FromArgb(215, 106, 15);
-            E1port.Location = new Point(311, 225);
+            E1port.Location = new Point(479, 275);
             E1port.Name = "E1port";
             E1port.Size = new Size(32, 38);
             E1port.TabIndex = 5;
@@ -116,7 +117,7 @@
             txtTeam1Score.BorderStyle = BorderStyle.FixedSingle;
             txtTeam1Score.Font = new Font("Segoe UI", 26F, FontStyle.Regular, GraphicsUnit.Point);
             txtTeam1Score.ForeColor = Color.White;
-            txtTeam1Score.Location = new Point(554, 60);
+            txtTeam1Score.Location = new Point(722, 110);
             txtTeam1Score.Name = "txtTeam1Score";
             txtTeam1Score.Size = new Size(62, 65);
             txtTeam1Score.TabIndex = 6;
@@ -129,7 +130,7 @@
             txtTeam2Score.BorderStyle = BorderStyle.FixedSingle;
             txtTeam2Score.Font = new Font("Segoe UI", 26F, FontStyle.Regular, GraphicsUnit.Point);
             txtTeam2Score.ForeColor = Color.White;
-            txtTeam2Score.Location = new Point(896, 60);
+            txtTeam2Score.Location = new Point(1118, 110);
             txtTeam2Score.Name = "txtTeam2Score";
             txtTeam2Score.Size = new Size(64, 65);
             txtTeam2Score.TabIndex = 7;
@@ -143,7 +144,7 @@
             btnFinish.FlatStyle = FlatStyle.Flat;
             btnFinish.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnFinish.ForeColor = Color.White;
-            btnFinish.Location = new Point(576, 419);
+            btnFinish.Location = new Point(744, 469);
             btnFinish.Margin = new Padding(3, 4, 3, 4);
             btnFinish.Name = "btnFinish";
             btnFinish.Size = new Size(384, 191);
@@ -156,7 +157,7 @@
             // 
             TimerCounter.AutoSize = true;
             TimerCounter.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point);
-            TimerCounter.Location = new Point(753, 62);
+            TimerCounter.Location = new Point(928, 112);
             TimerCounter.Name = "TimerCounter";
             TimerCounter.Size = new Size(0, 60);
             TimerCounter.TabIndex = 14;
@@ -170,7 +171,7 @@
             // 
             minutes.AutoSize = true;
             minutes.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point);
-            minutes.Location = new Point(683, 62);
+            minutes.Location = new Point(863, 112);
             minutes.Name = "minutes";
             minutes.Size = new Size(0, 60);
             minutes.TabIndex = 15;
@@ -179,7 +180,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(721, 61);
+            label1.Location = new Point(899, 111);
             label1.Name = "label1";
             label1.Size = new Size(0, 60);
             label1.TabIndex = 16;
@@ -189,7 +190,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(10, 20, 30);
-            ClientSize = new Size(1440, 993);
+            ClientSize = new Size(1811, 1093);
             Controls.Add(label1);
             Controls.Add(minutes);
             Controls.Add(TimerCounter);
@@ -204,8 +205,12 @@
             Controls.Add(Team1);
             ForeColor = Color.FromArgb(215, 106, 15);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MinimizeBox = false;
             Name = "ResultFrom";
             Text = "ResultFrom";
+            TopMost = true;
+            WindowState = FormWindowState.Maximized;
             ResumeLayout(false);
             PerformLayout();
         }

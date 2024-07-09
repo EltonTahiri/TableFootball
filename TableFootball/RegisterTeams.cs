@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using Timer = System.Threading.Timer;
 
 
 
@@ -16,10 +17,13 @@ namespace TableFootball
 
         public static string Team1;
         public static string Team2;
+        private System.Windows.Forms.Timer timer3;
+
         public RegisterTeams()
         {
             InitializeComponent();
             FillDGA();
+            timer2.Start();
 
         }
 
@@ -50,13 +54,14 @@ namespace TableFootball
                 Fill();
                 AddPlayerDb();
                 AddTeamsDb();
-                
+
             }
 
             ResultFrom resultFrom = new ResultFrom(Team1, Team2, E1Sulm, E1Port, E2Sulm, E2Port);
             this.Hide();
             resultFrom.ShowDialog();
-            
+            timer2.Stop();
+
 
 
         }
@@ -90,9 +95,9 @@ namespace TableFootball
 
                             cmd.Parameters.AddWithValue("@name", E2Sulm);
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Lojtaret u regjistruan!");
+
                         }
-                       
+
 
                     }
 
@@ -129,7 +134,6 @@ namespace TableFootball
                             cmd.Parameters.AddWithValue("@attacker", E2Sulm);
                             cmd.Parameters.AddWithValue("@defender", E2Port);
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Teams Registered!");
                         }
 
 
@@ -207,20 +211,42 @@ namespace TableFootball
         public void FillDGA()
         {
             string connectionString = @"Server=OLTI-PC;Database=TableFootball;Trusted_Connection=True;";
-           
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            string query = "SELECT winner as Team, COUNT(*) AS wins\r\n   FROM playedGames\r\n   WHERE DatePlayed >= DATEADD(DAY, -7, GETDATE())\r\n   GROUP BY winner\r\n   ORDER BY wins DESC";
+            try
             {
-                conn.Open();
-                string query = "SELECT winner as Team, COUNT(*) AS wins\r\n   FROM playedGames\r\n   WHERE DatePlayed >= DATEADD(DAY, -7, GETDATE())\r\n   GROUP BY winner\r\n   ORDER BY wins DESC";
-                SqlDataAdapter da = new SqlDataAdapter(query , conn);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView.DataSource = dt;
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
 
-                conn.Close();
+                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dataGridView.DataSource = dt;
+                    conn.Close();
+                }
             }
+            catch(Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
         }
 
+
+        private void Form_Load(object sender, EventArgs e)
+        {
+            timer2.Interval = 3500;
+            timer2.Start();
+        }
+
+        private void Timer3_Tick(object sender, EventArgs e)
+        {
+            FillDGA();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            FillDGA();
+        }
     }
 }

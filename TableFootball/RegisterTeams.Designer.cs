@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterTeams));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
@@ -51,6 +52,7 @@
             txtTeam1 = new TextBox();
             txtTeam2 = new TextBox();
             dataGridView = new DataGridView();
+            timer2 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
@@ -59,7 +61,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(641, 543);
+            label1.Location = new Point(854, 543);
             label1.Name = "label1";
             label1.Size = new Size(243, 37);
             label1.TabIndex = 0;
@@ -68,7 +70,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(458, 80);
+            pictureBox1.Location = new Point(671, 80);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(571, 432);
@@ -82,7 +84,7 @@
             txtE1Port.BorderStyle = BorderStyle.FixedSingle;
             txtE1Port.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtE1Port.ForeColor = SystemColors.Window;
-            txtE1Port.Location = new Point(503, 744);
+            txtE1Port.Location = new Point(716, 744);
             txtE1Port.Margin = new Padding(3, 4, 3, 4);
             txtE1Port.Name = "txtE1Port";
             txtE1Port.Size = new Size(114, 34);
@@ -94,7 +96,7 @@
             txtE1Sulm.BorderStyle = BorderStyle.FixedSingle;
             txtE1Sulm.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtE1Sulm.ForeColor = SystemColors.Window;
-            txtE1Sulm.Location = new Point(277, 744);
+            txtE1Sulm.Location = new Point(490, 744);
             txtE1Sulm.Margin = new Padding(3, 4, 3, 4);
             txtE1Sulm.Name = "txtE1Sulm";
             txtE1Sulm.Size = new Size(114, 34);
@@ -106,7 +108,7 @@
             txtE2Sulm.BorderStyle = BorderStyle.FixedSingle;
             txtE2Sulm.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtE2Sulm.ForeColor = SystemColors.Window;
-            txtE2Sulm.Location = new Point(853, 744);
+            txtE2Sulm.Location = new Point(1066, 744);
             txtE2Sulm.Margin = new Padding(3, 4, 3, 4);
             txtE2Sulm.Name = "txtE2Sulm";
             txtE2Sulm.Size = new Size(114, 34);
@@ -118,7 +120,7 @@
             txtE2Port.BorderStyle = BorderStyle.FixedSingle;
             txtE2Port.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtE2Port.ForeColor = SystemColors.Window;
-            txtE2Port.Location = new Point(1074, 744);
+            txtE2Port.Location = new Point(1287, 744);
             txtE2Port.Margin = new Padding(3, 4, 3, 4);
             txtE2Port.Name = "txtE2Port";
             txtE2Port.Size = new Size(114, 34);
@@ -128,7 +130,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(389, 579);
+            label2.Location = new Point(602, 579);
             label2.Name = "label2";
             label2.Size = new Size(126, 46);
             label2.TabIndex = 6;
@@ -138,7 +140,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(982, 579);
+            label3.Location = new Point(1195, 579);
             label3.Name = "label3";
             label3.Size = new Size(126, 46);
             label3.TabIndex = 7;
@@ -149,7 +151,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(853, 688);
+            label4.Location = new Point(1066, 688);
             label4.Name = "label4";
             label4.Size = new Size(123, 37);
             label4.TabIndex = 8;
@@ -160,7 +162,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(1074, 688);
+            label5.Location = new Point(1287, 688);
             label5.Name = "label5";
             label5.Size = new Size(102, 37);
             label5.TabIndex = 9;
@@ -171,7 +173,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(503, 688);
+            label6.Location = new Point(716, 688);
             label6.Name = "label6";
             label6.Size = new Size(102, 37);
             label6.TabIndex = 11;
@@ -182,7 +184,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(281, 688);
+            label7.Location = new Point(494, 688);
             label7.Name = "label7";
             label7.Size = new Size(123, 37);
             label7.TabIndex = 10;
@@ -195,7 +197,7 @@
             btnContinue.FlatStyle = FlatStyle.Flat;
             btnContinue.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnContinue.ForeColor = Color.White;
-            btnContinue.Location = new Point(1239, 857);
+            btnContinue.Location = new Point(1584, 894);
             btnContinue.Margin = new Padding(3, 4, 3, 4);
             btnContinue.Name = "btnContinue";
             btnContinue.Size = new Size(193, 109);
@@ -211,7 +213,7 @@
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnClear.ForeColor = Color.White;
-            btnClear.Location = new Point(19, 857);
+            btnClear.Location = new Point(129, 894);
             btnClear.Margin = new Padding(3, 4, 3, 4);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(193, 109);
@@ -225,7 +227,7 @@
             txtTeam1.BackColor = Color.FromArgb(10, 20, 30);
             txtTeam1.BorderStyle = BorderStyle.FixedSingle;
             txtTeam1.ForeColor = Color.White;
-            txtTeam1.Location = new Point(390, 636);
+            txtTeam1.Location = new Point(603, 636);
             txtTeam1.Name = "txtTeam1";
             txtTeam1.Size = new Size(125, 27);
             txtTeam1.TabIndex = 14;
@@ -235,7 +237,7 @@
             txtTeam2.BackColor = Color.FromArgb(10, 20, 30);
             txtTeam2.BorderStyle = BorderStyle.FixedSingle;
             txtTeam2.ForeColor = Color.White;
-            txtTeam2.Location = new Point(982, 628);
+            txtTeam2.Location = new Point(1195, 628);
             txtTeam2.Name = "txtTeam2";
             txtTeam2.Size = new Size(125, 27);
             txtTeam2.TabIndex = 15;
@@ -273,7 +275,7 @@
             dataGridView.Enabled = false;
             dataGridView.EnableHeadersVisualStyles = false;
             dataGridView.GridColor = Color.BlanchedAlmond;
-            dataGridView.Location = new Point(28, 80);
+            dataGridView.Location = new Point(140, 80);
             dataGridView.Name = "dataGridView";
             dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -295,12 +297,16 @@
             dataGridView.Size = new Size(424, 420);
             dataGridView.TabIndex = 16;
             // 
+            // timer2
+            // 
+            timer2.Tick += timer2_Tick;
+            // 
             // RegisterTeams
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(10, 20, 30);
-            ClientSize = new Size(1440, 993);
+            ClientSize = new Size(1789, 996);
             ControlBox = false;
             Controls.Add(dataGridView);
             Controls.Add(txtTeam2);
@@ -323,8 +329,11 @@
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
+            MinimizeBox = false;
             Name = "RegisterTeams";
             Text = "Table Football";
+            TopMost = true;
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
@@ -350,5 +359,7 @@
         private TextBox txtTeam1;
         private TextBox txtTeam2;
         private DataGridView dataGridView;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
     }
 }
