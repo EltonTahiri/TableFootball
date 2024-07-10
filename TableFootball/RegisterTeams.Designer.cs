@@ -30,11 +30,11 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterTeams));
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             txtE1Port = new TextBox();
@@ -253,51 +253,51 @@
             dataGridView.AllowUserToDeleteRows = false;
             dataGridView.AllowUserToResizeColumns = false;
             dataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(10, 20, 30);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(10, 20, 30);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView.BackgroundColor = Color.FromArgb(10, 20, 30);
             dataGridView.BorderStyle = BorderStyle.None;
             dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(10, 20, 30);
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(10, 20, 30);
-            dataGridViewCellStyle7.SelectionForeColor = Color.White;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(10, 20, 30);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(10, 20, 30);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(10, 20, 30);
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.FromArgb(215, 106, 15);
-            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(10, 20, 30);
-            dataGridViewCellStyle8.SelectionForeColor = Color.White;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dataGridView.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(10, 20, 30);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(215, 106, 15);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(10, 20, 30);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridView.Enabled = false;
             dataGridView.EnableHeadersVisualStyles = false;
             dataGridView.GridColor = Color.BlanchedAlmond;
-            dataGridView.Location = new Point(140, 80);
+            dataGridView.Location = new Point(107, 176);
             dataGridView.Name = "dataGridView";
             dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(10, 20, 30);
-            dataGridViewCellStyle9.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(10, 20, 30);
-            dataGridViewCellStyle9.SelectionForeColor = Color.White;
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(10, 20, 30);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(10, 20, 30);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView.RowHeadersVisible = false;
             dataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle10.BackColor = Color.FromArgb(10, 20, 30);
-            dataGridViewCellStyle10.ForeColor = Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(10, 20, 30);
-            dataGridViewCellStyle10.SelectionForeColor = Color.White;
-            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(10, 20, 30);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(10, 20, 30);
+            dataGridViewCellStyle5.SelectionForeColor = Color.White;
+            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView.RowTemplate.Height = 29;
             dataGridView.Size = new Size(424, 420);
             dataGridView.TabIndex = 16;
@@ -309,10 +309,11 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
+            checkBox1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox1.ForeColor = Color.White;
-            checkBox1.Location = new Point(140, 509);
+            checkBox1.Location = new Point(93, 112);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(69, 24);
+            checkBox1.Size = new Size(80, 29);
             checkBox1.TabIndex = 17;
             checkBox1.Text = "1 Day";
             checkBox1.UseVisualStyleBackColor = true;
@@ -320,10 +321,11 @@
             // checkBox2
             // 
             checkBox2.AutoSize = true;
+            checkBox2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox2.ForeColor = Color.White;
-            checkBox2.Location = new Point(140, 539);
+            checkBox2.Location = new Point(176, 112);
             checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(79, 24);
+            checkBox2.Size = new Size(92, 29);
             checkBox2.TabIndex = 18;
             checkBox2.Text = "1 Week";
             checkBox2.UseVisualStyleBackColor = true;
@@ -331,10 +333,11 @@
             // checkBox3
             // 
             checkBox3.AutoSize = true;
+            checkBox3.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox3.ForeColor = Color.White;
-            checkBox3.Location = new Point(140, 569);
+            checkBox3.Location = new Point(270, 112);
             checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(86, 24);
+            checkBox3.Size = new Size(102, 29);
             checkBox3.TabIndex = 19;
             checkBox3.Text = "1 Month";
             checkBox3.UseVisualStyleBackColor = true;
@@ -342,10 +345,11 @@
             // checkBox4
             // 
             checkBox4.AutoSize = true;
+            checkBox4.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox4.ForeColor = Color.White;
-            checkBox4.Location = new Point(140, 597);
+            checkBox4.Location = new Point(375, 112);
             checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(92, 24);
+            checkBox4.Size = new Size(110, 29);
             checkBox4.TabIndex = 20;
             checkBox4.Text = "6 Months";
             checkBox4.UseVisualStyleBackColor = true;
@@ -353,10 +357,11 @@
             // checkBox5
             // 
             checkBox5.AutoSize = true;
+            checkBox5.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox5.ForeColor = Color.White;
-            checkBox5.Location = new Point(140, 626);
+            checkBox5.Location = new Point(488, 112);
             checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(71, 24);
+            checkBox5.Size = new Size(81, 29);
             checkBox5.TabIndex = 21;
             checkBox5.Text = "1 Year";
             checkBox5.UseVisualStyleBackColor = true;

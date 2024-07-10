@@ -261,7 +261,7 @@ namespace TableFootball
         {
             getCheckedValue();
             FillDGA(valueDaysToCheck);
-      
+
         }
 
         public void getCheckedValue()
@@ -273,7 +273,7 @@ namespace TableFootball
             }
             else if (checkBox2.Checked)
             {
-                valueDaysToCheck =  "7";
+                valueDaysToCheck = "7";
             }
             else if (checkBox3.Checked)
             {
@@ -292,8 +292,10 @@ namespace TableFootball
                 valueDaysToCheck = "365";
             }
 
-              
+
 
         }
+
+
     }
 }
