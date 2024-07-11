@@ -27,6 +27,8 @@ namespace TableFootball
         public string winner;
         private int _minutes;
         private int _ticksDisplay;
+        public int team1wins;
+        private int team2wins;
         DateTime dt = DateTime.Now;
 
 
@@ -41,9 +43,8 @@ namespace TableFootball
             _E2sulm = E2sulm;
             MyTimer.Enabled = true;
             FillTeamsAndPlayers();
-
-
-
+            getTeam1Wins(_Team1);
+            getTeam2Wins(_Team2);
         }
         public void FillTeamsAndPlayers()
         {
@@ -132,6 +133,8 @@ namespace TableFootball
             _ticks++;
             _ticksDisplay++;
 
+
+
             TimerCounter.Text = _ticksDisplay.ToString();
             if (_ticksDisplay % 60 == 0)
             {
@@ -142,7 +145,129 @@ namespace TableFootball
 
             }
         }
+        // (team1Score / (team1Score + team2Score)) * 100;
 
 
+
+        public void getTeam1Wins(string team1)
+        {
+            // (team1Score / (team1Score + team2Score)) * 100;
+            string connectionString = @"Server=OLTI-PC;Database=TableFootball;Trusted_Connection=True;";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = @"
+                         SELECT COUNT(*) AS wins
+                         FROM playedGames
+                         WHERE winner = @team1";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@team1", team1);
+                        var result = cmd.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            team1wins = Convert.ToInt32(result);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No wins found for the team.");
+                        }
+                    }
+
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+
+
+        public void getTeam2Wins(string team2)
+        {
+            // (team1Score / (team1Score + team2Score)) * 100;
+            string connectionString = @"Server=OLTI-PC;Database=TableFootball;Trusted_Connection=True;";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = @"
+                         SELECT COUNT(*) AS wins
+                         FROM playedGames
+                         WHERE winner = @team2";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@team2", team2);
+                        var result = cmd.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            team2wins = Convert.ToInt32(result);
+                            getPropability();
+                            getOdds();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("No wins found for the team.");
+                        }
+                    }
+
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+
+        public void getPropability()
+        {
+            if (team1wins + team2wins > 0)
+            {
+                WinPercTeam1.Text = ((team1wins / (double)(team1wins + team2wins)) * 100).ToString("F2") + "%";
+                WinPercTeam2.Text = ((team2wins / (double)(team2wins + team1wins)) * 100).ToString("F2") + "%";
+            }
+            else
+            {
+                WinPercTeam1.Text = "0%";
+                WinPercTeam2.Text = "0%";
+            }
+        }
+
+
+        public void getOdds()
+        {
+            if (team1wins + team2wins > 0)
+            {
+                odds1.Text = (1 / (team1wins / (double)(team1wins + team2wins))).ToString("0.00");
+                if (team2wins != 0 && team1wins != 0)
+                {
+                    if (team1wins >= team2wins)
+                    {
+                        oddsX.Text = (team1wins / (double)team2wins).ToString("0.00");
+                    }
+                    else
+                    {
+                        oddsX.Text = (team2wins / (double)team1wins).ToString("0.00");
+                    }
+                }
+                odds2.Text = (1 / (team2wins / (double)(team1wins + team2wins))).ToString("0.00");
+            }
+            else
+            {
+                odds1.Text = "0";
+                oddsX.Text = "0";
+                odds2.Text = "0";
+            }
+        }
     }
 }
